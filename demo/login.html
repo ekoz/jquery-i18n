@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo</title>
+        <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="../jquery.i18n.js"></script>
+        <script src="login.js"></script>
+    </head>
+    <body>
+        <p>
+            <a href="javascript:void(0);" id="btnZh">中文简体</a>
+            <a href="javascript:void(0);" id="btnTw">中文繁体</a>
+            <a href="javascript:void(0);" id="btnEn">English</a>
+        </p>
+        <p>
+            <label k-resid="username">用户名</label> <input type="text" id="j_username" placeholder="用户名" maxlength="12" k-resid="username" />
+        </p>
+        <p>
+            <label k-resid="password">密码</label> <input type="password" id="j_password" placeholder="密码" autocomplete="new-password" k-resid="password" />
+        </p>
+        <p>
+            <label k-resid="captcha">验证码</label> <input type="text" id="j_code" placeholder="验证码" size="4" k-resid="captcha" />
+        </p>
+        <p>
+            <a id="btnOk" href="javascript:void(0);" k-resid="login">立即登录</a>
+        </p>
+    </body>
+</html>
