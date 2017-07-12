@@ -1,5 +1,5 @@
 ### 基于jquery的国际化工具类
-	用于前端文本国际化，支持同时引入多个语言资源文件，更友好的支持中文环境，在中文环境下无需引入资源文件
+    用于前端文本国际化，支持同时引入多个语言资源文件，更友好的支持中文环境，在中文环境下无需引入资源文件
 
 #### 使用方法
 
@@ -13,9 +13,9 @@
 ###### 使用方法
 
 * 设置语言，参数为空时默认从浏览器里获取
-
- $.i18n.setLocale('en');
-
+```
+$.i18n.setLocale('en');
+```
 * 加载资源文件，待国际化的代码都在回调函数中处理，参数success标识加载了资源文件，中文环境下无需加载资源文件
 
 	```
@@ -25,7 +25,7 @@
 
 * 获取资源，详见demo
 
-	通过 k-resid 标签属性获取
+	* 通过 k-resid 标签属性获取
 ```
 <label k-resid="username">用户名</label>
 $('label[k-resid]').each(function(i, item){
@@ -35,9 +35,9 @@ $('label[k-resid]').each(function(i, item){
 });
 $('#j_username').attr('placeholder', $.i18n.prop('#j_username'));
 ```
-
+    * 通过 id 获取
 ```
-通过 id 获取 alert($.i18n.prop('username_is_null', '请输入用户名'));
+ alert($.i18n.prop('username_is_null', '请输入用户名'));
 ```
 
 #### 语言资源格式
