@@ -62,10 +62,10 @@
 			if (langScript!=null && b){
 				if (typeof(langScript)==='object' && !isNaN(langScript.length)){
 					$(langScript).each(function(i, item){
-						$('head').append('<script src="' + item + '" charset="utf-8" type="text/javascript"><\/script>');
+						_appendScript(item);
 					});
 				}else{
-					$('head').append('<script src="' + langScript + '" charset="utf-8" type="text/javascript"><\/script>');
+					_appendScript(langScript);
 				}
 				success = true;
 			}
@@ -98,4 +98,14 @@
 			return res || defaultValue || id;
 		}
 	});
+
+	/**
+	 * 向页面加载javascript文件
+	 */
+	function _appendScript(langScript){
+		var _key = langScript.substring(0, langScript.length-3).replace(/\//gi, '_');
+		if ($('script[_key="' + _key + '"]').length==0){
+			$('head').append('<script _key="' + _key + '" src="' + langScript + '" charset="utf-8" type="text/javascript"><\/script>');
+		}
+	}
 })(jQuery);
