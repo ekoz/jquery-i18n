@@ -35,10 +35,12 @@ $('label[k-resid]').each(function(i, item){
 });
 $('#j_username').attr('placeholder', $.i18n.prop('#j_username'));
 ```
+
     * 通过 id 获取
 ```
  alert($.i18n.prop('username_is_null', '请输入用户名'));
 ```
+
     * 占位符功能
 ```
  $('#whoami2').text($.i18n.prop('whoami', $.i18n.prop('monkey'), '16'));
