@@ -26,6 +26,13 @@ $(function(){
                 //$(item).text($.i18n.prop($(item).attr('k-resid')));
             });
             alert($.i18n.prop('test', '测试'));
+
+            //占位符演示
+            $('#whoami').text($.i18n.prop('whoami', '黄晓明', '18'));
+            $('#whoami2').text($.i18n.prop('whoami', $.i18n.prop('monkey'), '16'));
+
+            //中文资源演示
+            $('#zhres').text($.i18n.prop($('#zhres').text(), '默认文本'));
         }
 
         $('#btnOk').click(function(){

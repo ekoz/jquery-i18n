@@ -89,9 +89,20 @@
 				$.i18n.lang[locale] = {};
 			}
 			if ($(elem).attr('k-resid')==undefined){
+				//传入的是资源id
 				id = elem;
 				res = $.i18n.lang[locale][elem];
+				if (res!=undefined && res.indexOf('{0}')!=-1){
+					//需要填充占位符，如果参数未填满，会显示undefined
+					//不支持参数是资源id的情况，如果需要适配语言，参数可以使用 alert($.i18n.prop('username', '你好', $.i18n.prop('login'), '测试'));$.i18n.prop('msg_hello', '你好', $.i18n.prop('login'), '测试');
+					var args = arguments;
+					return res.replace(/\{(\d+)\}/g, function(m, i){
+						i++;
+						return args[i];
+					});
+				}
 			}else{
+				//传入的是元素
 				id = $(elem).attr('k-resid');
 				res = $.i18n.lang[locale][id];
 			}
