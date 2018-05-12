@@ -15,7 +15,7 @@
 	$.extend($.i18n, {
 		/* 获取当前环境语言 */
 		getLocale: function(){
-			return $.cookie('locale')==undefined?'zh':$.cookie('locale');
+			return Cookies.get('locale')==undefined?'zh':Cookies.get('locale');
 		},
 		/** 
 		 * 设置语言类型，参数为空时默认从浏览器里获取 
@@ -36,8 +36,8 @@
 					key = key.substr(0, 2);
 				}
 			}
-			if ($.cookie('locale')!=key){
-				$.cookie('locale', key, {expires: 3000});
+			if (Cookies.get('locale')!=key){
+                Cookies.set('locale', key, { expires: 7 });
 			}
 		},
 		/**
