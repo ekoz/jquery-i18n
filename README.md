@@ -5,9 +5,9 @@
 
 ###### 文件引入
 
-	该插件依赖于jquery 和 jquery.cookie，可修改源代码取消对后者的依赖
+	该插件依赖于jquery 和 js-cookie，可修改源代码取消对后者的依赖
 	<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
-	<script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="https://cdn.bootcss.com/js-cookie/latest/js.cookie.min.js"></script>
 	<script src="../jquery.i18n.js"></script>
 
 ###### 使用方法
